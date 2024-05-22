@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" conent="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BH Finder - About Us</title>
+    <link rel="stylesheet" href="owner regis.css">
+    <script>
+      function validateForm() {
+          var fileInput = document.getElementById('file');
+          if (fileInput.files.length === 0) {
+              alert('Please select a file to upload.');
+              return false;
+          }
+          return true;
+      }
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">Boarding House Finder</a>
+    <nav class="navbar">
+        <a href="../../index.html" class="active">Home</a>
+    </nav>
+  </header>
+
+<div class="scrollable">
+<div class="container">
+<div class="title">Owner Registration</div>
+<div class="content">
+  <form action="connectOwner.php" method="post" enctype="multipart/form-data">
+    <div class="user-details">
+      <div class="input-box">
+        <span class="details">Full Name<br>(First Name,Middle Name,Last Name)</span>
+        <input 
+                                type="text" 
+                                placeholder="Enter your name"
+                                class=  "form-control"
+                                id="ownerName" 
+                                name="ownerName" 
+                                required>
+      </div>
+      <div class="input-box">
+        <span class="details"><br>Birthdate<br></span>
+        <input 
+        type="date"
+        placeholder="dd/ mm/ yr"
+        class="form-control" 
+        id="ownerBday" 
+        name="ownerBday" 
+        required>
+      </div>
+      <div class="input-box">
+        <span class="details">Address</span>
+        <input 
+                                type="text" 
+                                placeholder="Enter your Address"
+                                class="form-control"
+                                id="ownerAddress" 
+                                name="ownerAddress" 
+                                required>
+      </div>
+      <div class="input-box">
+        <span class="details">Phone Number</span>
+        <input
+                                type="number" 
+                                placeholder="Enter your number"
+                                class="form-control"
+                                id="ownerCPNum" 
+                                name="ownerCPNum" 
+                                required>
+      </div>
+      <div class="input-box">
+        <span class="details">Age</span>
+        <input 
+                                type="number" 
+                                placeholder="Enter your Age"
+                                class="form-control"
+                                id="ownerAge" 
+                                name="ownerAge" 
+                                required>
+      </div>
+    </div>
+    <div class="gender-details">
+      <input type="radio" name="ownerGender" value="m" id="dot-1">
+      <input type="radio" name="ownerGender" value="f" id="dot-2">
+      <input type="radio" name="ownerGender" value="o" id="dot-3">
+      <span class="gender-title">Gender</span>
+      <div class="category">
+        <label for="dot-1">
+          <span class="dot one"></span>
+          <span class="gender">Male</span>
+        </label>
+        <label for="dot-2">
+          <span class="dot two"></span>
+          <span class="gender">Female</span>
+        </label>
+        <label for="dot-3">
+          <span class="dot three"></span>
+          <span class="gender">Prefer not to say</span>
+        </label>
+      </div>
+    </div>
+    <div class="civil-status-details">
+        <input type="radio" name="ownerCStatus" value="s" id="civil-dot-1">
+        <input type="radio" name="ownerCStatus" value="m" id="civil-dot-2">
+        <input type="radio" name="ownerCStatus" value="w" id="civil-dot-3">
+        <input type="radio" name="ownerCStatus" value="ls" id="civil-dot-4">
+        <span class="civil-status-title">Civil Status</span>
+        <div class="category">
+            <label for="civil-dot-1">
+              <span class="dot one"></span>
+              <span class="civil-status">Single</span>
+              </label>
+            <label for="civil-dot-2">
+              <span class="dot two"></span>
+              <span class="civil-status">Married</span>
+            </label>
+            <label for="civil-dot-3">
+              <span class="dot three"></span>
+              <span class="civil-status">Widowed</span>
+            </label>
+            <label for="civil-dot-4">
+                <span class="dot four"></span>
+                <span class="civil-status">LegallySeparated</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="file-input">
+        <input type="file" id="ownerImg" name="ownerImg" class="inputfile" />
+        <label for="ownerImg">Choose Image</label>
+    </div>
+    
+
+
+
+
+
+
+
+    
+    <div class="content">
+  
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Boarding House Name</span>
+              <input 
+                                type="text" 
+                                placeholder="Enter name"
+                                class="form-control"
+                                id="bhName" 
+                                name="bhName" 
+                                required>
+            </div>
+            <div class="input-box">
+              <span class="details">Boarding House Price</span>
+              <input 
+              type="number" 
+              placeholder="Enter Price"
+              class="form-control"
+              id="bhPrice" 
+              name="bhPrice" 
+              required>
+            </div>
+            <div class="input-box">
+              <span class="details">Boarding House Addres</span>
+              <input 
+              type="text" 
+              placeholder="Enter Address" 
+              class="form-control"
+              id="bhAddress" 
+              name="bhAddress" 
+              required>
+            </div>
+
+            
+            <div class="bh-occupants-details">
+              <input type="radio" name="bhOccupants" value="Solo" id="occupants-dot-1">
+              <input type="radio" name="bhOccupants" value="Pair" id="occupants-dot-2">
+              <input type="radio" name="bhOccupants" value="Group" id="occupants-dot-3">
+              <span class="bh-occupants-title">Occupants Range</span>
+              <div class="category">
+                <label for="occupants-dot-1">
+                  <span class="dot one"></span>
+                  <span class="bh-occupants">Solo</span>
+                </label>
+                <label for="occupants-dot-2">
+                  <span class="dot two"></span>
+                  <span class="bh-occupants">Pair</span>
+                </label>
+                <label for="occupants-dot-3">
+                  <span class="dot three"></span>
+                  <span class="bh-occupants">Group</span>
+                </label>
+              </div>
+            </div>
+
+
+            <div class="input-box">
+              <span class="details">Boarding House Contact Number</span>
+              <input 
+                                type="number" 
+                                placeholder="Enter Contact Number"
+                                class="form-control"
+                                id="bhCPNum" 
+                                name="bhCPNum" 
+                                required>
+            </div>
+            
+            <div class="bh-ammenities-details">
+              <input type="checkbox" name="bhAmmenities[]" value="WiFi" id="ammenities-dot-1">
+              <input type="checkbox" name="bhAmmenities[]" value="Laundry" id="ammenities-dot-2">
+              <input type="checkbox" name="bhAmmenities[]" value="Kitchen" id="ammenities-dot-3">
+              <span class="bh-ammenities-title">Ammnenities Range</span>
+              <div class="category">
+                <label for="ammenities-dot-1">
+                  <span class="dot one"></span>
+                  <span class="bh-ammenities">Solo</span>
+                </label>
+                <label for="ammenities-dot-2">
+                  <span class="dot two"></span>
+                  <span class="bh-ammenities">Laundry</span>
+                </label>
+                <label for="ammenities-dot-3">
+                  <span class="dot three"></span>
+                  <span class="bh-ammenities">Kitchen</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+            <div class="file-input">
+              <input type="file" id="bhPic" name="bhPic" class="inputfile" />
+              <label for="bhPic">Insert Boarding House Image</label>
+          </div>
+          
+
+   
+        <div class="button">
+            <input type="submit" value="Register">
+        </div>
+  </form>
+</div>
+
+
+
+</body>
+
+<!-- <section class="about">
+        <div class="heading">
+            <h1>Registration</h1>
+        </div>
+        <a href="../../index.html">Home</a>
+
+        <div class="container">
+            <div class="about-content">
+                <h2>Owners' Registration Process</h2>
+                <p>Owner's Information</p>
+                <div class="wrapper">
+                    <span class="icon-close">
+                        <ion-icon name="close"></ion-icon>
+                    </span>
+            
+                    <div class="form-box register">
+                        <form action="connectOwner.php" method="post" enctype="multipart/form-data">
+                            <div class="input-box">
+                                <label>Full Name (First Name Middle Name Last Name)</label>
+                                <input 
+                                type="text" 
+                                class=  "form-control"
+                                id="ownerName" 
+                                name="ownerName" 
+                                required>
+                            </div>
+                            <div class="input-box">
+                                <label>Birthdate (xxxx-xx-xx, YEAR-MONTH-DATE)</label>
+                                <input 
+                                type="date"
+                                class="form-control" 
+                                id="ownerBday" 
+                                name="ownerBday" 
+                                required>
+                            </div>
+                            <div class="input-box">
+                                <label for="ownerGender">Gender</label>
+                                <div>
+                                    <label for="male" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="ownerGender"
+                                        value="m"
+                                        id="male"
+                                      />Male</label
+                                    >
+                                    <label for="female" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="ownerGender"
+                                        value="f"
+                                        id="female"
+                                      />Female</label
+                                    >
+                                    <label for="others" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="ownerGender"
+                                        value="o"
+                                        id="others"
+                                      />Others</label
+                                    >
+                            </div>
+                            <div class="input-box">
+                                <label>Age</label>
+                                <input 
+                                type="number" 
+                                class="form-control"
+                                id="ownerAge" 
+                                name="ownerAge" 
+                                required>
+                            </div>
+                            <div class="input-box">
+                                <label>Address</label>
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="ownerAddress" 
+                                name="ownerAddress" 
+                                required>
+                            </div>
+                            <div class="input-box">
+                                <label>Contact Number</label>
+                                <input 
+                                type="number" 
+                                class="form-control"
+                                id="ownerCPNum" 
+                                name="ownerCPNum" 
+                                required>
+                            </div>
+                            <div class="input-box">
+                                <label>Civil Status</label>
+                                    <label for="single" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="ownerCStatus"
+                                        name="ownerCStatus"
+                                        id="single"
+                                      />Single</label
+                                    >
+                                    <label for="married" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="ownerCStatus"
+                                        value="m"
+                                        id="married"
+                                      />Married</label
+                                    >
+                                    <label for="widowed" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="ownerCStatus"
+                                        value="w"
+                                        id="widowed"
+                                      />Widowed</label
+                                    >
+                                    <label for="legallySeparated" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="ownerCStatus"
+                                        value="ls"
+                                        id="legallySeparated"
+                                      />Legally Separated</label
+                                    >
+                            </div>
+                            <div class="input-box">
+                                <label>Owner Image</label>
+                                <input 
+                                type="file" 
+                                class="form-control"
+                                id="ownerImg" 
+                                name="ownerImg" 
+                                required>
+                            </div>
+                            <p></p>
+                            <p>Boarding House Details</p>
+                            <div class="input-box">
+                                <label>Boarding House Name</label>
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="bhName" 
+                                name="bhName" 
+                                required>
+                            </div>
+                            <div class="input-box">
+                                <label>Boarding House Address</label>
+                                <input 
+                                type="text" 
+                                class="form-control"
+                                id="bhAddress" 
+                                name="bhAddress" 
+                                required>
+                            </div>
+                            <div class="input-box">
+                              <label>Boarding House Contact Number</label>
+                              <input 
+                              type="number" 
+                              class="form-control"
+                              id="bhCPNum" 
+                              name="bhCPNum" 
+                              required>
+                            </div>
+                            <div class="input-box">
+                              <label>Boarding House Price</label>
+                              <input 
+                              type="number" 
+                              class="form-control"
+                              id="bhPrice" 
+                              name="bhPrice" 
+                              required>
+                            </div>
+                            <div class="input-box">
+                              <label>Boarding House Occupants</label>
+                              <label for="Solo" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="bhOccupants"
+                                        value="Solo"
+                                        id="Solo"
+                                      />Solo</label
+                              >
+                              <label for="Pair" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="bhOccupants"
+                                        value="Pair"
+                                        id="Pair"
+                                      />Pair</label
+                              >
+                              <label for="Group" class="radio-inline"
+                                      ><input
+                                        type="radio"
+                                        name="bhOccupants"
+                                        value="Group"
+                                        id="Group"
+                                      />Group</label
+                              >
+                            </div>
+                            <div class="input-box">
+                              <label>Boarding House Ammnenities</label>
+                              <label for="WiFi" class="checkbox-inline"
+                                      ><input
+                                        type="checkbox"
+                                        name="bhAmmenities[]"
+                                        value="WiFi"
+                                        id="WiFi"
+                                      />WiFi</label
+                              >
+                              <label for="Laundry" class="checkbox-inline"
+                                      ><input
+                                        type="checkbox"
+                                        name="bhAmmenities[]"
+                                        value="Laundry"
+                                        id="Laundry"
+                                      />Laundry</label
+                              >
+                              <label for="Kitchen" class="checkbox-inline"
+                                      ><input
+                                        type="checkbox"
+                                        name="bhAmmenities[]" 
+                                        value="Kitchen"
+                                        id="Kitchen"
+                                      />Kitchen</label
+                              >
+
+                            <div class="input-box">
+                                <label>Boarding House Image</label>
+                                <input 
+                                type="file" 
+                                class="form-control"
+                                id="bhPic" 
+                                name="bhPic" 
+                                required>
+                            </div>
+
+
+                            <p></p>
+                            <button type="submit" class="btn">Register Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
