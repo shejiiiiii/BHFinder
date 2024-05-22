@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" conent="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BH Finder - About Us</title>
+    <link rel="stylesheet" href="boarder regis.css">
+    <title>BH Finder - Registration</title>
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">Boarding House Finder</a>
+    <nav class="navbar">
+        <a href="../../index.html" class="active">Home</a>
+        <a href="#bh">Boarding House</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="title">Boarder Registration</div>
+    <div class="content">
+      <form action="connectBoarder.php" method="post" enctype="multipart/form-data">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name<br>(First Name,Middle Name,Last Name)</span>
+            <input 
+              type="text"
+              placeholder="Enter your name" 
+              class="form-control"
+              id="boarderName" 
+              name="boarderName" 
+              required>
+          </div>
+          <div class="input-box">
+            <span class="details"><br>Birthdate<br></span>
+            <input 
+              type="date"
+              placeholder="dd/ mm/ yr"
+              class="form-control" 
+              id="boarderBday" 
+              name="boarderBday" 
+              required>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input 
+              type="text" 
+              placeholder="Enter your Address"
+              class="form-control"
+              id="boarderAddress" 
+              name="boarderAddress" 
+              required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input 
+              type="number" 
+              placeholder="Enter your number"
+              class="form-control"
+              id="boarderCPNum" 
+              name="boarderCPNum" 
+              required>
+          </div>
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input 
+              type="number" 
+              placeholder="Enter your Age"
+              class="form-control"
+              id="boarderAge" 
+              name="boarderAge" 
+              required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="boarderGender"  value="m" id="dot-1">
+          <input type="radio" name="boarderGender"  value="f" id="dot-2">
+          <input type="radio" name="boarderGender"  value="o" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="civil-status-details">
+          <input type="radio" name="boarderCS" value="s" id="civil-dot-1">
+          <input type="radio" name="boarderCS" value="m" id="civil-dot-2">
+          <input type="radio" name="boarderCS" value="w" id="civil-dot-3">
+          <input type="radio" name="boarderCS" value="ls" id="civil-dot-4">
+            <span class="civil-status-title">Civil Status</span>
+            <div class="category">
+                <label for="civil-dot-1">
+                <span class="dot one"></span>
+                <span class="civil-status">Single</span>
+                </label>
+                <label for="civil-dot-2">
+                <span class="dot two"></span>
+                <span class="civil-status">Married</span>
+                </label>
+                <label for="civil-dot-3">
+                <span class="dot three"></span>
+                <span class="civil-status">Widowed</span>
+                </label>
+                <label for="civil-dot-4">
+                    <span class="dot four"></span>
+                    <span class="civil-status">LegallySeparated</span>
+                    </label>
+            </div>
+        </div>
+        
+        <div class="file-input">
+          <input type="file" id="file" name="boarderImg" class="inputfile" />
+          <label for="file">Choose Image</label>
+        </div>
+
+        
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+                    
+
+</body>
