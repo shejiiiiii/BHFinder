@@ -10,10 +10,11 @@ if ($bhConn->connect_error) {
     $documentType = array("bhPermit", "bhFire", "bhSanitary", "bhPolice", "bhMembership", "bhBusiness");
     $i = $_GET['i'];
 
-    $sql = "SELECT ? FROM bhdocuments WHERE bhId = ?";
+    $column = $documentType[$i];
+    $sql = "SELECT `$column` FROM bhdocuments WHERE bhId = ?";
     $stmt = $bhConn->prepare($sql);
     $bhId = $_GET['bhId'];
-    $stmt->bind_param("si", $documentType[$i], $bhId);
+    $stmt->bind_param("i", $bhId);
     $stmt->execute();
     $stmt->store_result();
 

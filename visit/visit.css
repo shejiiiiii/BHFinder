@@ -459,3 +459,22 @@ a {
   margin-top: 270px;
   margin-left: -275px;
 }
+
+input[type="reset"] {
+  background-color: #ffffff; 
+  border: 2px solid #4CAF50; 
+  color: #4CAF50; 
+  padding: 10px 40px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline; 
+  font-size: 18px; 
+  cursor: pointer; 
+  border-radius: 10px; 
+  transition: all 0.3s ease; 
+}
+
+input[type="reset"]:hover {
+  background-color: #4CAF50; 
+  color: #ffffff;
+}

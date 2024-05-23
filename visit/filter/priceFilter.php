@@ -119,15 +119,17 @@
     
                                         <span class="dropdown__title">Proximity to Campus</span>
     
+                                        <span class="dropdown__title">Occupants</span>
+    
                                         <ul class="dropdown__list">
                                             <li>
-                                                <a href="#" class="dropdown__link">100 meters</a>
+                                                <a href="occupantsFilter.php?bhOccupants=1" class="dropdown__link">Solo</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="dropdown__link">200 meters</a>
+                                                <a href="occupantsFilter.php?bhOccupants=2" class="dropdown__link">Pair</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="dropdown__link">300 meters</a>
+                                                <a href="occupantsFilter.php?bhOccupants=3" class="dropdown__link">Group</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -153,9 +155,9 @@
                                     </div>
 
                                     <div class="dropdown__group">
-                                        <div class="reset"></div>
-                                        <span class="dropdown__title">Reset</span>
-                                        <a href="../<?php echo htmlspecialchars($_SESSION['back']) ?>">Reset</a>
+                                        <ul class="dropdown__list">
+                                            <input type="reset" value="Reset">
+                                        </ul>
                                     </div>
 
                                 </div>

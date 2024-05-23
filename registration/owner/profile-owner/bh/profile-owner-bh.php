@@ -102,7 +102,7 @@
                     <a href="../profile-owner.php" class="menu-link"><i class="ri-account-circle-fill menu-icon"></i>Account</a>
                     <a href="profile-owner-bh.php" class="menu-link"><i class="ri-hotel-bed-fill menu-icon"></i></i>Boarding House</a>
                     <a href="../boarders/profile-owner-boarders.php" class="menu-link"><i class="ri-team-fill menu-icon"></i>Boarders</a>
-                    <a href="logout.php" class="menu-link"><i class="ri-logout-box-r-fill menu-icon"></i>Logout</a>
+                    <a href="../logout.php" class="menu-link"><i class="ri-logout-box-r-fill menu-icon"></i>Logout</a>
                 </div>
             </div>
 
