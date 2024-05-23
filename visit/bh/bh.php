@@ -71,7 +71,7 @@
     </head>
 
     <body>
-        <a href="<?php echo htmlspecialchars($_SESSION['back']) ?>" class="ri-arrow-left-circle-fill"></a>
+        <a href="../<?php echo htmlspecialchars($_SESSION['back']) ?>" class="ri-arrow-left-circle-fill"></a>
         <header class="header">
             <a href="index.html" class="logo">Boarding House Finder</a>
 
@@ -126,7 +126,12 @@
             <h2 class="heading">Legal Documents</h2>
 
             <div class="docu-container">
-                <div class="docu-box">
+
+                <?php 
+                
+                ?>
+
+                <!-- <div class="docu-box">
                     <img src="business.png" alt="">
                     <div class="docu-layer">
                         <h4>Business Permit</h4>
@@ -178,7 +183,9 @@
                         <p>DTI Philippines</p>
                         <a href="#"><i class="ri-external-link-fill"></i></a>
                     </div>
-                </div>
+                </div> -->
+
+
             </div>
 
         </section>

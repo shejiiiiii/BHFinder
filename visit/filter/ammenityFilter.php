@@ -1,21 +1,45 @@
 <?php
     session_start();
 
-    $_SESSION['back'] = 'visitVisitorOnly.php';
+    $ammenityId = $_GET['ammenityId'];
     $hint = [];
     $hintId = [];
+    $bhId = [];
+    $bhName = [];
+    $bhAddress = [];
+    $bhPic = [];
 
     $temp1conn = new mysqli('localhost', 'root', '', 'bhfinder_boardinghouse');
     if($temp1conn->connect_error) {
         die(''. $temp1conn ->connect_error);
     } else {
-        $temp1sql = 'SELECT bhId, bhName, bhAddress FROM bhdetails';
+        $temp1sql = 'SELECT bhId, ammenityId FROM bhammenities';
         $temp1stmt = $temp1conn->query($temp1sql);
         $temp1info = mysqli_fetch_all($temp1stmt, MYSQLI_ASSOC);
 
-        $temp2sql = 'SELECT bhPic FROM bhdetails';
-        $temp2stmt = $temp1conn->query($temp2sql);
-        $temp2info = mysqli_fetch_all($temp2stmt, MYSQLI_ASSOC);
+        foreach($temp1info as $row) {
+            if($row['ammenityId'] == $ammenityId){
+                array_push($bhId, $row['bhId']);
+            }
+        }
+
+        $temp2sql = 'SELECT bhName, bhAddress, bhPic FROM bhdetails WHERE bhId = ?';
+        foreach($bhId as $row){
+            $temp2stmt = $temp1conn->prepare($temp2sql);
+            $temp2stmt->bind_param('i', $row);
+            $temp2stmt->execute();
+            $temp2stmt->bind_result($name, $address, $pic);
+            $temp2stmt->fetch();
+            array_push($bhName, $name);
+            array_push($bhAddress, $address);
+            array_push($bhPic, $pic);
+            $temp2stmt->close();
+        }
+
+        // print_r($bhId);
+        // print_r($bhName);
+        // print_r($bhAddress);
+
     }
 
 ?>
@@ -30,7 +54,7 @@
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
         <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="visit.css">
+        <link rel="stylesheet" href="../visit.css">
 
         <title>Boarding House Finder</title>
         <link rel="icon" type="image/png" href="Logo.png">
@@ -76,13 +100,13 @@
     
                                         <ul class="dropdown__list">
                                             <li>
-                                                <a href="filter/priceFilter.php?bhPrice=3000" class="dropdown__link">₱1000 - ₱3000</a>
+                                                <a href="priceFilter.php?bhPrice=3000" class="dropdown__link">₱1000 - ₱3000</a>
                                             </li>
                                             <li>
-                                                <a href="filter/priceFilter.php?bhPrice=5000" class="dropdown__link">₱3000 - ₱5000</a>
+                                                <a href="priceFilter.php?bhPrice=5000" class="dropdown__link">₱3000 - ₱5000</a>
                                             </li>
                                             <li>
-                                                <a href="filter/priceFilter.php?bhPrice=8000" class="dropdown__link">₱6000 - ₱8000</a>
+                                                <a href="priceFilter.php?bhPrice=8000" class="dropdown__link">₱6000 - ₱8000</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -116,16 +140,23 @@
     
                                         <ul class="dropdown__list">
                                             <li>
-                                                <a href="filter/ammenityFilter.php?ammenityId=1" class="dropdown__link" id="ammenityId">WiFi</a>
+                                                <a href="ammenityFilter.php?ammenityId=1" class="dropdown__link" id="ammenityId">WiFi</a>
                                             </li>
                                             <li>
-                                                <a href="filter/ammenityFilter.php?ammenityId=2" class="dropdown__link" id="ammenityId">Laundry Facilities</a>
+                                                <a href="ammenityFilter.php?ammenityId=2" class="dropdown__link" id="ammenityId">Laundry Facilities</a>
                                             </li>
                                             <li>
-                                                <a href="filter/ammenityFilter.php?ammenityId=3" class="dropdown__link" id="ammenityId">Kitchen</a>
+                                                <a href="ammenityFilter.php?ammenityId=3" class="dropdown__link" id="ammenityId">Kitchen</a>
                                             </li>
                                         </ul>
                                     </div>
+
+                                    <div class="dropdown__group">
+                                        <div class="reset"></div>
+                                        <span class="dropdown__title">Reset</span>
+                                        <a href="../<?php echo htmlspecialchars($_SESSION['back']) ?>">Reset</a>
+                                    </div>
+
                                 </div>
                             </div>
                         </li>
@@ -154,17 +185,17 @@
 
             <div class="bh-content">
                 <?php
-                foreach($temp1info as $row) {
-                    array_push($hint, $row['bhName']);
-                    array_push($hintId, $row['bhId']);
+                for($i = 0; $i < count($bhId); $i++) {
+                    array_push($hint, $bhName[$i]);
+                    array_push($hintId, $bhId[$i]);
                 ?>
-                    <a href="bh/bh.php?id=<?php echo htmlspecialchars($row['bhId']) ?>">
+                    <a href="../bh/bh.php?id=<?php echo htmlspecialchars($bhId[$i]) ?>">
                     <div class="col-content">
-                            <img src="displayBHPic.php?id=<?php echo htmlspecialchars($row['bhId']) ?>" alt="Image from Database">
+                            <img src="../displayBHPic.php?id=<?php echo htmlspecialchars($bhId[$i]) ?>" alt="Image from Database">
                             <i class="ri-shield-check-fill"></i>
-                        <h5><?php echo htmlspecialchars($row['bhName']) ?></h5>
+                        <h5><?php echo htmlspecialchars($bhName[$i]) ?></h5>
                         <i class="ri-map-pin-fill"></i>
-                        <p><?php echo htmlspecialchars($row['bhAddress']) ?></p>
+                        <p><?php echo htmlspecialchars($bhAddress[$i]) ?></p>
                     </div>
                     </a>
                 <?php
@@ -211,12 +242,12 @@
             }
 
             function selectInput(id){
-                window.location.href = 'bh/bh.php?id=' + id;
+                window.location.href = '../bh/bh.php?id=' + id;
             }
         </script>
 
         <!--=============== MAIN JS ===============-->
-        <script src="visit.js"></script>
+        <script src="../visit.js"></script>
         <!-- <script src="autocomplete.js"></script> -->
     </body>
 </html>

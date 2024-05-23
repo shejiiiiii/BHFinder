@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $_SESSION['back'] = '../visit.php';
+    $_SESSION['back'] = 'visit.php';
     $hint = [];
     $hintId = [];
 
@@ -78,13 +78,13 @@
     
                                         <ul class="dropdown__list">
                                             <li>
-                                                <a href="#" class="dropdown__link">₱1000 - ₱3000</a>
+                                                <a href="filter/priceFilter.php?bhPrice=3000" class="dropdown__link">₱1000 - ₱3000</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="dropdown__link">₱3000 - ₱5000</a>
+                                                <a href="filter/priceFilter.php?bhPrice=5000" class="dropdown__link">₱3000 - ₱5000</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="dropdown__link">₱6000 - ₱8000</a>
+                                                <a href="filter/priceFilter.php?bhPrice=8000" class="dropdown__link">₱6000 - ₱8000</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -118,16 +118,13 @@
     
                                         <ul class="dropdown__list">
                                             <li>
-                                                <a href="#" class="dropdown__link">WiFi</a>
+                                                <a href="filter/ammenityFilter.php?ammenityId=1" class="dropdown__link" id="ammenityId">WiFi</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="dropdown__link">Laundry Facilities</a>
+                                                <a href="filter/ammenityFilter.php?ammenityId=2" class="dropdown__link" id="ammenityId">Laundry Facilities</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="dropdown__link">Private Bathrooms</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="dropdown__link">Security</a>
+                                                <a href="filter/ammenityFilter.php?ammenityId=3" class="dropdown__link" id="ammenityId">Kitchen</a>
                                             </li>
                                         </ul>
                                     </div>

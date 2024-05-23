@@ -17,6 +17,34 @@
     $stmt->close();
     $conn->close();
 
+    $conn = new mysqli('localhost','root','','bhfinder_boardinghouse');
+	if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "DELETE FROM bhammenities WHERE userId =  $userId";   
+    $stmt = $conn->prepare($sql);    
+    if ($stmt->execute()) {
+        echo "Record deleted successfully";
+    } else {
+        echo "Error: " . $conn->error;
+    }
+    $stmt->close();
+    $conn->close();
+
+    $conn = new mysqli('localhost','root','','bhfinder_boardinghouse');
+	if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "DELETE FROM bhdetails WHERE userId =  $userId";   
+    $stmt = $conn->prepare($sql);    
+    if ($stmt->execute()) {
+        echo "Record deleted successfully";
+    } else {
+        echo "Error: " . $conn->error;
+    }
+    $stmt->close();
+    $conn->close();
+
     $conn = new mysqli('localhost','root','','bhfinder_registration');
 	if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
