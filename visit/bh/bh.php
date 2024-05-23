@@ -128,63 +128,26 @@
             <div class="docu-container">
 
                 <?php 
-                
+                $h4 = array("Business Permit", "Fire Safety Inspection Certificate" , "Sanitary Permit",
+                            "Police Clearance", "Certificate of Membership and Registration", "Certificate of Business Name Registration");
+                $p = array("Office of the Mayor", "Bureau of Fire Protection", "City Health Office",
+                            "Polangui Municipal Police Station", "PADPAO, Inc.", "DTI Philippines");
+                for($i = 0; $i < 6; $i++){
+                ?>    
+
+                    <div class="docu-box">
+                        <img src="displayDocumentPicVisit.php?bhId=<?php echo htmlspecialchars($bhId) ?>&i=<?php echo htmlspecialchars($i) ?>" 
+                        alt="">
+                        <div class="docu-layer">
+                            <h4><?php echo htmlspecialchars($h4[$i]) ?></h4>
+                            <p><?php echo htmlspecialchars($p[$i]) ?></p>
+                            <a href="#"><i class="ri-external-link-fill"></i></a>
+                        </div>
+                    </div>
+
+                <?php 
+                }
                 ?>
-
-                <!-- <div class="docu-box">
-                    <img src="business.png" alt="">
-                    <div class="docu-layer">
-                        <h4>Business Permit</h4>
-                        <p>Office of the Mayor</p>
-                        <a href="#"><i class="ri-external-link-fill"></i></a>
-                    </div>
-                </div>
-
-                <div class="docu-box">
-                    <img src="firesafety.jpg" alt="">
-                    <div class="docu-layer">
-                        <h4>Fire Safety Inspection Certificate</h4>
-                        <p>Bureau of Fire Protection</p>
-                        <a href="#"><i class="ri-external-link-fill"></i></a>
-                    </div>
-                </div>
-
-                <div class="docu-box">
-                    <img src="sanitary.jpg" alt="">
-                    <div class="docu-layer">
-                        <h4>Sanitary Permit</h4>
-                        <p>City Health Office</p>
-                        <a href="#"><i class="ri-external-link-fill"></i></a>
-                    </div>
-                </div>
-
-                <div class="docu-box">
-                    <img src="police.jpg" alt="">
-                    <div class="docu-layer">
-                        <h4>Police Clearance</h4>
-                        <p>Polangui Municipal Police Station</p>
-                        <a href="#"><i class="ri-external-link-fill"></i></a>
-                    </div>
-                </div>
-
-                <div class="docu-box">
-                    <img src="certofmem.jpg" alt="">
-                    <div class="docu-layer">
-                        <h4>Certificate of Membership and Registration</h4>
-                        <p>PADPAO, Inc.</p>
-                        <a href="#"><i class="ri-external-link-fill"></i></a>
-                    </div>
-                </div>
-
-                <div class="docu-box">
-                    <img src="certofbus.jpg" alt="">
-                    <div class="docu-layer">
-                        <h4>Certificate of Business Name Registration</h4>
-                        <p>DTI Philippines</p>
-                        <a href="#"><i class="ri-external-link-fill"></i></a>
-                    </div>
-                </div> -->
-
 
             </div>
 

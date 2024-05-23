@@ -132,10 +132,9 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#" class="nav__link">
+                            <a href="../registration/boarder/profile-user/profile-user View.php" class="nav__link">
                                 <i class="ri-account-circle-line"></i>
                             </a>
-                            <a href="username.php"></a>
                         </li>
                     </ul>
                 </div>

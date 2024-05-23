@@ -80,7 +80,7 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li>
-                            <a href="../index.html" class="nav__link">Home</a>
+                            <a href="../../index.html" class="nav__link">Home</a>
                         </li>
                       
 
