@@ -155,7 +155,7 @@
 
                                     <div class="dropdown__group">
                                         <ul class="dropdown__list">
-                                            <input type="reset" value="Reset">
+                                            <a href="../<?php echo htmlspecialchars($_SESSION['back']) ?>" class="reset">RESET</a>
                                         </ul>
                                     </div>
 
