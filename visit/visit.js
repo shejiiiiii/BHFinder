@@ -72,5 +72,3 @@
  }
 
  addEventListener('resize', removeStyle)
-
- 

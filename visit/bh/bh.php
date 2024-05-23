@@ -71,7 +71,7 @@
     </head>
 
     <body>
-        <a href="visit.html" class="ri-arrow-left-circle-fill"></a>
+        <a href="<?php echo htmlspecialchars($_SESSION['back']) ?>" class="ri-arrow-left-circle-fill"></a>
         <header class="header">
             <a href="index.html" class="logo">Boarding House Finder</a>
 

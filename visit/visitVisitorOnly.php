@@ -1,7 +1,9 @@
 <?php
     session_start();
 
+    $_SESSION['back'] = '../visitVisitorOnly.php';
     $hint = [];
+    $hintId = [];
 
     $temp1conn = new mysqli('localhost', 'root', '', 'bhfinder_boardinghouse');
     if($temp1conn->connect_error) {
@@ -157,6 +159,7 @@
                 <?php
                 foreach($temp1info as $row) {
                     array_push($hint, $row['bhName']);
+                    array_push($hintId, $row['bhId']);
                 ?>
                     <a href="bh/bh.php?id=<?php echo htmlspecialchars($row['bhId']) ?>">
                     <div class="col-content">
@@ -174,34 +177,44 @@
         </div>
 
         <script>
-            let availableKeywords = <?php echo json_encode($hint) ?>;
+            let availableNames = <?php echo json_encode($hint) ?>;
+            let availableIds = <?php echo json_encode($hintId) ?>;
+            let availableKeywords = {};
+
+            for(var i = 0; i < availableNames.length; i++){
+                availableKeywords[availableIds[i]] = availableNames[i];
+            }
+
             const resultsBox = document.querySelector(".result-box");
             const inputBox = document.getElementById("input-box");
             function searchBH(str){
-                let result = [];
+                let resultIds = [];
+                let resultNames = [];
                 if(str.length){
-                    result = availableKeywords.filter((keyword)=>{
-                        return keyword.toLowerCase().includes(str.toLowerCase());
-                    });
-                    console.log(result);
+                    for(var key in availableKeywords){
+                        if(availableKeywords[key].toLowerCase().includes(str.toLowerCase())) {
+                            resultIds.push(key);
+                            resultNames.push(availableKeywords[key]);
+                        }
+                    }
+                    console.log(resultNames);
                 }
-                display(result);
+                display(resultNames, resultIds);
 
-                if(!result.length){
+                if(!resultNames.length){
                     resultsBox.innerHTML = '';
                 }
             }
-            function display(result){
-                const content = result.map((list)=>{
-                    return "<li onclick=selectInput(this)>" + list + "</li>";
+            function display(resultNames, resultIds){
+                const content = resultNames.map((name, index)=>{
+                    return `<li onclick="selectInput('${resultIds[index]}')">${name}</li>`;
                 });
 
                 resultsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
             }
 
-            function selectInput(list){
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("POST", "bh/bh.php?id=")
+            function selectInput(id){
+                window.location.href = 'bh/bh.php?id=' + id;
             }
         </script>
 
