@@ -75,7 +75,7 @@
             <a href="index.html" class="logo">Boarding House Finder</a>
 
             <nav class="navbar">
-                <a href="../../../visit/visit.html">Home</a>
+                <a href="../../../visit/visit.php">Home</a>
             </nav>
         </header>
         

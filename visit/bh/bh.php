@@ -1,7 +1,7 @@
 <?php
     session_start();
     $tempuserId= $_SESSION['userId'];
-    $bhId= 1024;
+    $bhId= $_GET['id'];
 
     $temp1conn = new mysqli('localhost', 'root', '', 'bhfinder_boardinghouse');
     if ($temp1conn->connect_error) {
