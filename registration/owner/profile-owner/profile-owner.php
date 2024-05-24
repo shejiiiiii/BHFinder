@@ -19,14 +19,14 @@
         $temp1stmt->fetch();
         $temp1stmt->close();
 
-        $temp2sql = "SELECT userName, userEmail FROM userdetails WHERE userId = ?";
+        $temp2sql = "SELECT userName, userEmail, userPassword FROM userdetails WHERE userId = ?";
 
         $temp2stmt = $temp1conn->prepare($temp2sql);
         $userId = $tempuserId; 
         $temp2stmt->bind_param("i", $userId); 
         $temp2stmt->execute();
 
-        $temp2stmt->bind_result($userName, $userEmail);
+        $temp2stmt->bind_result($userName, $userEmail, $userPassword);
         $temp2stmt->fetch();
         $temp2stmt->close();
         
@@ -84,7 +84,7 @@
                 <div class="account-header">
                     <h1 class="account-title">Account Setting</h1>
                     <div class="btn-container">
-                        <a href="profile-owner Edit.php" class="btn-save">Edit</a>
+                        <a href="profile-owner-Account.php" class="btn-save">Edit</a>
                     </div>
 
                 </div>
@@ -136,6 +136,28 @@
 
                 
             </form>
+
+            <form class="account">
+                <div class="account-header">
+                    <h1 class="account-title">User Setting</h1>
+                    <div class="btn-container">
+                        <a href="profile-owner-User.php" class="btn-save">Edit</a>
+                    </div>
+
+                </div>
+
+                <div class="account-edit">
+                    <div class="input-container">
+                        <label>Password</label>
+                        <label><?php
+                        for( $i = 0; $i < strlen($userPassword); $i++ ) {
+                            echo "*";
+                        }
+                        ?></label>
+                    </div>
+                </div> 
+            </form>
+
         </div>
     </body>
 </html>
